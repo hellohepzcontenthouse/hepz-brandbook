@@ -33,8 +33,8 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text-main);
 .top-nav{position:fixed;top:0;left:0;width:100%;z-index:900;display:flex;justify-content:center;background:rgba(255,255,255,0.92);border-bottom:var(--bw) solid var(--line);backdrop-filter:blur(20px);transition:box-shadow 0.4s;}
 .top-nav.scrolled{box-shadow:0 4px 20px rgba(0,0,0,0.08);}
 .top-nav-inner{width:100%;max-width:1440px;display:flex;justify-content:space-between;align-items:center;padding:16px var(--pad);}
-.nl{text-decoration:none;display:flex;align-items:center;}
-.nl img{height:36px;width:auto;object-fit:contain;display:block;}
+.nl{text-decoration:none;display:flex;align-items:center;overflow:hidden;}
+.nl img{height:56px;width:180px;object-fit:cover;object-position:center;display:block;}
 .nav-links{display:flex;gap:0;align-items:center;}
 .nav-link{font-size:10px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--text-main);text-decoration:none;padding:6px 12px;position:relative;transition:color 0.3s;}
 .nav-link::after{content:'';position:absolute;bottom:0;left:12px;right:12px;height:2px;background:var(--accent);transform:scaleX(0);transform-origin:left;transition:transform 0.3s var(--ease);}
@@ -68,25 +68,26 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text-main);
 
 /* ── 01 LOGO ── */
 .logo-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-bottom:2px;}
-.lc{aspect-ratio:1;display:flex;align-items:center;justify-content:center;padding:40px;position:relative;overflow:hidden;transition:transform 0.4s var(--ease),box-shadow 0.4s;}
+.lc{aspect-ratio:1;display:flex;align-items:center;justify-content:center;padding:0;position:relative;overflow:hidden;transition:transform 0.4s var(--ease),box-shadow 0.4s;}
 .lc:hover{transform:translate(-3px,-3px);box-shadow:var(--shadow-brutal);z-index:2;}
-.lc img{width:72%;max-width:240px;object-fit:contain;}
-.lc-lbl{position:absolute;bottom:18px;left:22px;font-size:10px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;}
+.lc img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;display:block;}
+.lc-lbl{position:absolute;bottom:18px;left:22px;font-size:10px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;z-index:2;}
 .lc-navy{background:var(--navy);}
 .lc-navy .lc-lbl{color:rgba(255,255,255,0.3);}
 .lc-white{background:#fff;border:var(--bw) solid var(--line);}
 .lc-white .lc-lbl{color:rgba(13,27,42,0.3);}
 .lc-dark{background:#1A2332;}
 .lc-dark .lc-lbl{color:rgba(255,255,255,0.28);}
-.lc-wide{grid-column:1/-1;background:var(--bg-card);border:var(--bw) solid var(--line);padding:56px 64px;display:flex;align-items:center;justify-content:center;position:relative;transition:transform 0.4s var(--ease),box-shadow 0.4s;}
+.lc-wide{grid-column:1/-1;background:var(--bg-card);border:var(--bw) solid var(--line);padding:0;height:220px;display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden;transition:transform 0.4s var(--ease),box-shadow 0.4s;}
 .lc-wide:hover{transform:translate(-3px,-3px);box-shadow:var(--shadow-brutal);}
-.lc-wide img{max-height:120px;max-width:480px;object-fit:contain;}
-.lc-wide-lbl{position:absolute;bottom:18px;right:24px;font-size:10px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:rgba(13,27,42,0.3);}
+.lc-wide img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;object-position:center;padding:28px;}
+.lc-wide-lbl{position:absolute;bottom:18px;right:24px;font-size:10px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:rgba(13,27,42,0.3);z-index:2;}
 
 .fav-row{display:flex;gap:32px;align-items:flex-end;flex-wrap:wrap;margin-top:56px;}
 .fav-item{display:flex;flex-direction:column;align-items:center;gap:12px;}
 .fav-item span{font-size:10px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--text-muted);}
-.fav-item img{object-fit:contain;border-radius:18%;}
+.fav-item img{object-fit:cover;object-position:center;border-radius:18%;display:block;}
+.cs-img{width:120px;height:120px;object-fit:cover;object-position:center;border-radius:18%;display:block;}
 
 /* ── 02 COLOURS ── */
 .col-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;}
@@ -234,7 +235,7 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text-main);
 <nav class="top-nav" id="top-nav">
   <div class="top-nav-inner">
     <a href="#hero" class="nl">
-      <img src="images/logo-horizontal.png" alt="HEPZ Content House">
+      <img src="https://raw.githubusercontent.com/hellohepzcontenthouse/hepz-brandbook/main/images/logo-horizontal.png" alt="HEPZ Content House">
     </a>
     <div class="nav-links">
       <a href="#logo" class="nav-link">Logo</a>
@@ -268,26 +269,32 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text-main);
 
   <div class="logo-grid r d3">
     <div class="lc lc-navy">
-      <img src="images/logo-v1-dark.png" alt="V1 Dark">
+      <img src="https://raw.githubusercontent.com/hellohepzcontenthouse/hepz-brandbook/main/images/logo-v1-dark.png" alt="V1 Dark">
       <span class="lc-lbl">V1 — Primary Dark</span>
     </div>
     <div class="lc lc-white">
-      <img src="images/logo-v2-light.png" alt="V2 Light">
+      <img src="https://raw.githubusercontent.com/hellohepzcontenthouse/hepz-brandbook/main/images/logo-v2-light.png" alt="V2 Light">
       <span class="lc-lbl">V2 — Light + Accent</span>
     </div>
     <div class="lc lc-dark">
-      <img src="images/logo-v3-reversed.png" alt="V3 Reversed">
+      <img src="https://raw.githubusercontent.com/hellohepzcontenthouse/hepz-brandbook/main/images/logo-v3-reversed.png" alt="V3 Reversed">
       <span class="lc-lbl">V3 — Reversed</span>
     </div>
   </div>
   <div class="lc-wide r d4">
-    <img src="images/logo-horizontal.png" alt="Horizontal Lockup">
+    <img src="https://raw.githubusercontent.com/hellohepzcontenthouse/hepz-brandbook/main/images/logo-horizontal.png" alt="Horizontal Lockup">
     <span class="lc-wide-lbl">Horizontal Lockup — Header / Email / Documents</span>
   </div>
 
   <div class="fav-row r d5">
-    <div class="fav-item"><img src="images/logo-favicon.png" style="width:128px;" alt="128px"><span>128px</span></div>
-    <div class="fav-item"><img src="images/logo-favicon.png" style="width:64px;" alt="64px"><span>64px</span></div>
+    <div class="fav-item">
+      <img src="https://raw.githubusercontent.com/hellohepzcontenthouse/hepz-brandbook/main/images/logo-favicon.png" style="width:128px;height:128px;object-fit:cover;border-radius:18%;" alt="128px">
+      <span>128px</span>
+    </div>
+    <div class="fav-item">
+      <img src="https://raw.githubusercontent.com/hellohepzcontenthouse/hepz-brandbook/main/images/logo-favicon.png" style="width:64px;height:64px;object-fit:cover;border-radius:18%;" alt="64px">
+      <span>64px</span>
+    </div>
     <div class="fav-item" style="margin-left:28px;align-items:flex-start;max-width:340px;">
       <p style="font-size:13px;color:var(--text-muted);line-height:1.75;font-style:italic;">For 32px and 16px, do not scale this file down. Export separate versions with heavier strokes. The house shape needs to hold at tiny sizes and it will not if you just shrink this one.</p>
     </div>
@@ -488,7 +495,7 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text-main);
       <span class="cs-lbl cs-bot">min 1× H height</span>
       <span class="cs-lbl cs-lft">min 1× H</span>
       <span class="cs-lbl cs-rgt">min 1× H</span>
-      <img src="images/logo-favicon.png" class="cs-img" alt="Clearspace demo">
+      <img src="https://raw.githubusercontent.com/hellohepzcontenthouse/hepz-brandbook/main/images/logo-favicon.png" class="cs-img" alt="Clearspace">
     </div>
   </div>
 </section>

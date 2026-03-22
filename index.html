@@ -33,10 +33,8 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text-main);
 .top-nav{position:fixed;top:0;left:0;width:100%;z-index:900;display:flex;justify-content:center;background:rgba(255,255,255,0.92);border-bottom:var(--bw) solid var(--line);backdrop-filter:blur(20px);transition:box-shadow 0.4s;}
 .top-nav.scrolled{box-shadow:0 4px 20px rgba(0,0,0,0.08);}
 .top-nav-inner{width:100%;max-width:1440px;display:flex;justify-content:space-between;align-items:center;padding:16px var(--pad);}
-.nl{text-decoration:none;display:flex;flex-direction:column;gap:1px;}
-.nl1{font-family:'Playfair Display',serif;font-weight:600;font-size:17px;letter-spacing:0.26em;text-transform:uppercase;color:var(--text-main);line-height:1;}
-.nlr{width:100%;height:2px;background:var(--accent);opacity:0.5;}
-.nl2{font-family:'Playfair Display',serif;font-style:italic;font-size:11px;letter-spacing:0.2em;color:var(--accent);line-height:1;}
+.nl{text-decoration:none;display:flex;align-items:center;}
+.nl img{height:36px;width:auto;object-fit:contain;display:block;}
 .nav-links{display:flex;gap:0;align-items:center;}
 .nav-link{font-size:10px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--text-main);text-decoration:none;padding:6px 12px;position:relative;transition:color 0.3s;}
 .nav-link::after{content:'';position:absolute;bottom:0;left:12px;right:12px;height:2px;background:var(--accent);transform:scaleX(0);transform-origin:left;transition:transform 0.3s var(--ease);}
@@ -206,7 +204,7 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text-main);
 .tag-dont{background:#FFEBEE;color:#C62828;}
 .use-title{font-family:'Playfair Display',serif;font-size:19px;font-weight:700;color:var(--text-main);margin-bottom:12px;line-height:1.3;}
 .use-desc{font-size:14px;color:var(--text-muted);line-height:1.8;}
-.cs-demo{margin-top:64px;display:flex;align-items:center;justify-content:center;padding:80px;background:var(--bg-card);border:var(--bw) solid var(--line);position:relative;}
+.cs-demo{margin-top:64px;display:flex;align-items:center;justify-content:center;padding:80px;background:#F4F6F9;border:var(--bw) solid var(--line);position:relative;}
 .cs-box{border:1.5px dashed var(--accent);padding:48px;position:relative;}
 .cs-lbl{position:absolute;font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent);white-space:nowrap;}
 .cs-top{top:-22px;left:50%;transform:translateX(-50%);}
@@ -236,9 +234,7 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text-main);
 <nav class="top-nav" id="top-nav">
   <div class="top-nav-inner">
     <a href="#hero" class="nl">
-      <span class="nl1">HEPZ</span>
-      <span class="nlr"></span>
-      <span class="nl2">content house</span>
+      <img src="images/logo-horizontal.png" alt="HEPZ Content House">
     </a>
     <div class="nav-links">
       <a href="#logo" class="nav-link">Logo</a>
@@ -268,34 +264,32 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text-main);
   <p class="sl r d1">01 — Logo System</p>
   <h2 class="sh1 r d2">THE MARK</h2>
   <p class="sh2 r d3">Five versions. One system.</p>
-  <p class="sdesc r d4">A hand-crafted house with HCH letterforms and a play button at its heart. Organic brush-stroke texture gives warmth. The rounded square container makes it work everywhere — 16px favicon to billboard.</p>
+  <p class="sdesc r d4">A hand-drawn house with HCH letterforms and a play button at its heart. The brush-stroke texture and the way the lines taper at the corners, that is what gives it warmth. The rounded square makes it work everywhere. A 16px favicon and a billboard. Same mark. Both work.</p>
 
   <div class="logo-grid r d3">
     <div class="lc lc-navy">
-      <img src="image/logo-v1-dark.png" alt="V1 Dark">
+      <img src="images/logo-v1-dark.png" alt="V1 Dark">
       <span class="lc-lbl">V1 — Primary Dark</span>
     </div>
     <div class="lc lc-white">
-      <img src="image/logo-v2-light.png" alt="V2 Light">
+      <img src="images/logo-v2-light.png" alt="V2 Light">
       <span class="lc-lbl">V2 — Light + Accent</span>
     </div>
     <div class="lc lc-dark">
-      <img src="image/logo-v3-reversed.png" alt="V3 Reversed">
+      <img src="images/logo-v3-reversed.png" alt="V3 Reversed">
       <span class="lc-lbl">V3 — Reversed</span>
     </div>
   </div>
   <div class="lc-wide r d4">
-    <img src="image/logo-horizontal.png" alt="Horizontal Lockup">
+    <img src="images/logo-horizontal.png" alt="Horizontal Lockup">
     <span class="lc-wide-lbl">Horizontal Lockup — Header / Email / Documents</span>
   </div>
 
   <div class="fav-row r d5">
-    <div class="fav-item"><img src="image/logo-favicon.png" style="width:128px;" alt="128px"><span>128px</span></div>
-    <div class="fav-item"><img src="image/logo-favicon.png" style="width:64px;" alt="64px"><span>64px</span></div>
-    <div class="fav-item"><img src="image/logo-favicon.png" style="width:32px;" alt="32px"><span>32px</span></div>
-    <div class="fav-item"><img src="image/logo-favicon.png" style="width:16px;" alt="16px"><span>16px</span></div>
-    <div class="fav-item" style="margin-left:28px;align-items:flex-start;max-width:300px;">
-      <p style="font-size:13px;color:var(--text-muted);line-height:1.75;font-style:italic;">At 32px and below, text drops. Only the house and blue play button carry the brand. This is intentional — and it works.</p>
+    <div class="fav-item"><img src="images/logo-favicon.png" style="width:128px;" alt="128px"><span>128px</span></div>
+    <div class="fav-item"><img src="images/logo-favicon.png" style="width:64px;" alt="64px"><span>64px</span></div>
+    <div class="fav-item" style="margin-left:28px;align-items:flex-start;max-width:340px;">
+      <p style="font-size:13px;color:var(--text-muted);line-height:1.75;font-style:italic;">For 32px and 16px, do not scale this file down. Export separate versions with heavier strokes. The house shape needs to hold at tiny sizes and it will not if you just shrink this one.</p>
     </div>
   </div>
 </section>
@@ -307,7 +301,7 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text-main);
   <p class="sl r d1">02 — Colour Palette</p>
   <h2 class="sh1 r d2">THE COLOURS</h2>
   <p class="sh2 r d3">Two colours. All the power.</p>
-  <p class="sdesc r d4">Navy carries authority and depth. Blue is energy, action, and content. Ice is breathing room. White is the canvas. Never introduce new colours without reason.</p>
+  <p class="sdesc r d4">Navy is the foundation. It carries the weight. Blue is where the energy goes. Ice is breathing room, the space around things. White is the canvas. These four are it. Do not add more.</p>
 
   <div class="col-grid r d3">
     <div class="csw sw-n"><div class="csw-name">Navy</div><div class="csw-hex">#0D1B2A</div><div class="csw-role">Primary · Dominant</div></div>
@@ -331,7 +325,7 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text-main);
   <p class="sl r d1">03 — Typography</p>
   <h2 class="sh1 r d2">THE VOICE</h2>
   <p class="sh2 r d3">Four typefaces. Four roles. Never swap.</p>
-  <p class="sdesc r d4">Each font has one job. Bebas Neue for impact and display. Playfair for elegance and editorial authority. Caveat for signature warmth. Inter for everything functional.</p>
+  <p class="sdesc r d4">Each font has one job. Bebas Neue for impact. Playfair for elegance and the logo wordmark. Caveat for the moments that need to feel personal. Inter for everything else. If you find yourself mixing these up, that is a sign something is wrong with the layout, not the fonts.</p>
 
   <div class="type-wrap r d3">
     <div class="type-row">
@@ -352,7 +346,7 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text-main);
     </div>
     <div class="type-row">
       <div><div class="tm-name">Body</div><div class="tm-detail">Inter<br>Regular 400<br>All body copy, 16px / 1.8</div></div>
-      <div class="t-body">We take complete creative and operational ownership — from strategy to execution — for creators, founders, and brands that want to be everywhere.</div>
+      <div class="t-body">We take complete creative ownership, from the strategy to the final post, for creators, founders, and brands that want to actually be seen. Not just present. Seen.</div>
     </div>
     <div class="type-row">
       <div><div class="tm-name">UI / Labels</div><div class="tm-detail">Inter Bold 700<br>11px ALL CAPS<br>Nav, labels, tags</div></div>
@@ -368,36 +362,36 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text-main);
   <p class="sl r d1">04 — Brand Voice</p>
   <h2 class="sh1 r d2">THE TONE</h2>
   <p class="sh2 r d3">What HEPZ sounds like.</p>
-  <p class="sdesc r d4">HEPZ speaks with confidence, not arrogance. Warmth, not fluff. Directness without aggression. Every word earns its place. Every number is real.</p>
+  <p class="sdesc r d4">Confident but not cold. Warm but not soft. Direct without being blunt. Every word earns its place. Every number is real. If it could go on a supplement label, it does not belong in our writing.</p>
 
   <div class="voice-grid r d3">
     <div class="vc">
       <span class="vc-num">01 / Direct</span>
       <div class="vc-name">Say what you mean. Then stop.</div>
-      <p class="vc-desc">No padding, no corporate language. Every sentence does one job. Short paragraphs. No filler. The words matter more than the word count.</p>
+      <p class="vc-desc">No padding. No corporate words. Every sentence does one job. The words matter more than the word count. If you can cut it and nothing is lost, cut it.</p>
       <span class="vc-ex-lbl">In practice</span>
       <div class="vc-ex">"You focus on the business. We make sure the world sees it."</div>
     </div>
     <div class="vc">
       <span class="vc-num">02 / Warm</span>
       <div class="vc-name">Confidence with a human pulse.</div>
-      <p class="vc-desc">HEPZ was built by a person, not a boardroom. The warmth of that origin stays in every piece of writing. Authority never comes at the cost of humanity.</p>
+      <p class="vc-desc">HEPZ was built by a person, not a boardroom. That stays in everything we write. Authority does not have to cost warmth. We have both and we do not trade one for the other.</p>
       <span class="vc-ex-lbl">In practice</span>
-      <div class="vc-ex">"Not sure? Just book a call. We'll tell you honestly which one fits — even if it's the smallest one."</div>
+      <div class="vc-ex">"Not sure? Just book a call. We'll tell you honestly which one fits, even if it's the smallest one."</div>
     </div>
     <div class="vc">
       <span class="vc-num">03 / Strategic</span>
       <div class="vc-name">Every claim is earned. Every number real.</div>
-      <p class="vc-desc">We never say "amazing results" when we can say "862K interactions." We never say "we're different" without showing the difference. Strategy lives in specifics.</p>
+      <p class="vc-desc">We do not say "amazing results" when we can say "862K interactions." We do not say "we're different" without showing how. Strategy lives in the specifics, not the adjectives.</p>
       <span class="vc-ex-lbl">In practice</span>
-      <div class="vc-ex">"From zero to 200K+ followers — because we stayed consistent long enough for the platform to push the content without being asked."</div>
+      <div class="vc-ex">"From zero to 200K+ followers. Because we stayed consistent long enough for the platform to push the content without being asked."</div>
     </div>
     <div class="vc">
       <span class="vc-num">04 / Faith-rooted</span>
       <div class="vc-name">Built for delight. Grounded in purpose.</div>
-      <p class="vc-desc">HEPZ is named after a word meaning "my delight is in her." That meaning lives quietly but permanently in everything — excellence, joy, light. Not preached. Practised.</p>
+      <p class="vc-desc">HEPZ is named after a word that means "my delight is in her." That meaning lives quietly in everything we do. Excellence, joy, light. Not preached. Just practised, every time.</p>
       <span class="vc-ex-lbl">In practice</span>
-      <div class="vc-ex">"You are the light of the world — a city on a hill cannot be hidden."</div>
+      <div class="vc-ex">"You are the light of the world. A city on a hill cannot be hidden."</div>
     </div>
   </div>
 
@@ -420,7 +414,7 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text-main);
   <p class="sl r d1">05 — Social Media Templates</p>
   <h2 class="sh1 r d2">THE CANVAS</h2>
   <p class="sh2 r d3">Every platform. One system.</p>
-  <p class="sdesc r d4">Navy background. Bebas Neue for punch. Playfair italic for softness. Blue play button as the through-line. These are starting points — apply them to your actual content.</p>
+  <p class="sdesc r d4">Navy background. Bebas Neue for punch. Playfair italic for the softer moments. Blue play button running through all of it. These are starting points. Take them and make them yours.</p>
 
   <div class="soc-grid r d3">
     <div class="soc-card sc-ig">
@@ -460,11 +454,11 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text-main);
       </div>
       <div style="padding:26px 30px;background:var(--bg-card);border:var(--bw) solid var(--line);">
         <div style="font-size:10px;font-weight:800;letter-spacing:0.18em;text-transform:uppercase;color:var(--accent);margin-bottom:10px;">LinkedIn</div>
-        <div style="font-size:14px;color:var(--text-muted);line-height:1.75;">Navy or white base. Blue accent on key words. Clean and authoritative only.</div>
+        <div style="font-size:14px;color:var(--text-muted);line-height:1.75;">Navy or white base. Blue on key words. Clean and authoritative. That is the whole brief.</div>
       </div>
       <div style="padding:26px 30px;background:var(--bg-card);border:var(--bw) solid var(--line);">
         <div style="font-size:10px;font-weight:800;letter-spacing:0.18em;text-transform:uppercase;color:var(--accent);margin-bottom:10px;">YouTube</div>
-        <div style="font-size:14px;color:var(--text-muted);line-height:1.75;">High contrast. Dark base, bold Bebas headline. Red bar on YouTube thumbnails only — never elsewhere.</div>
+        <div style="font-size:14px;color:var(--text-muted);line-height:1.75;">High contrast. Dark base, bold Bebas headline. The red bar lives on YouTube thumbnails only. It does not travel to other formats.</div>
       </div>
     </div>
   </div>
@@ -477,15 +471,15 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text-main);
   <p class="sl r d1">06 — Usage Rules</p>
   <h2 class="sh1 r d2">DO & DON'T</h2>
   <p class="sh2 r d3">The logo is a system. Treat it like one.</p>
-  <p class="sdesc r d4">Six rules. If something isn't covered here, ask: does this serve the brand or just the moment? If it's only the moment — don't do it.</p>
+  <p class="sdesc r d4">Six rules. If something comes up that is not covered here, ask yourself one thing. Does this serve the brand or just the moment? If it is only the moment, do not do it.</p>
 
   <div class="use-grid r d3">
-    <div class="use-card"><span class="use-tag tag-do">✓ Do</span><div class="use-title">Use on approved backgrounds only</div><div class="use-desc">V1 navy fill on white or light backgrounds. V3 reversed on dark or navy. V2 light for all branded documents. Never layer any version on a photograph.</div></div>
-    <div class="use-card"><span class="use-tag tag-dont">✗ Don't</span><div class="use-title">Never stretch, skew, or distort</div><div class="use-desc">Never scale non-proportionally. Never rotate. Never apply drop shadows, glows, or 3D effects to any element of the mark or wordmark.</div></div>
-    <div class="use-card"><span class="use-tag tag-do">✓ Do</span><div class="use-title">Maintain the clearspace zone</div><div class="use-desc">Minimum clearspace equal to the height of the "H" in HEPZ on all four sides. No text, images, or graphic elements may enter this zone.</div></div>
-    <div class="use-card"><span class="use-tag tag-dont">✗ Don't</span><div class="use-title">Never recolour the mark</div><div class="use-desc">Only use the three approved versions. No gradients on the logo. No single-colour versions in unapproved colours. No outlines added around the mark.</div></div>
-    <div class="use-card"><span class="use-tag tag-do">✓ Do</span><div class="use-title">Use the favicon at small sizes</div><div class="use-desc">Below 48px always use the icon-only favicon mark. Text becomes unreadable and must never be forced into favicon, app icon, or profile picture contexts.</div></div>
-    <div class="use-card"><span class="use-tag tag-dont">✗ Don't</span><div class="use-title">Never use on busy backgrounds</div><div class="use-desc">No photographic backgrounds, busy patterns, or complex gradients behind any logo version. Always use a solid approved colour. When in doubt, use white.</div></div>
+    <div class="use-card"><span class="use-tag tag-do">✓ Do</span><div class="use-title">Use on approved backgrounds only</div><div class="use-desc">V1 navy fill sits on white or light backgrounds. V3 reversed goes on dark or navy. V2 light is for branded documents. Do not put any version on a photograph.</div></div>
+    <div class="use-card"><span class="use-tag tag-dont">✗ Don't</span><div class="use-title">Never stretch, skew, or distort</div><div class="use-desc">Do not scale it non-proportionally. Do not rotate it. Do not add drop shadows, glows, or 3D effects to any part of the mark. It was drawn carefully. Keep it that way.</div></div>
+    <div class="use-card"><span class="use-tag tag-do">✓ Do</span><div class="use-title">Keep the clearspace clear</div><div class="use-desc">The minimum breathing room around the logo on all four sides is the height of the H in HEPZ. Nothing comes inside that space. Not text, not other logos, not decorative elements.</div></div>
+    <div class="use-card"><span class="use-tag tag-dont">✗ Don't</span><div class="use-title">Never recolour the mark</div><div class="use-desc">Three versions. That is what exists. No gradients on the logo. No colours from outside the palette. No outlines added around the mark. If none of the three versions work, that is a layout problem, not a logo problem.</div></div>
+    <div class="use-card"><span class="use-tag tag-do">✓ Do</span><div class="use-title">Use the favicon at small sizes</div><div class="use-desc">Below 48px, switch to the icon-only favicon mark. The text does not hold at that size. Do not force it. The house and the blue play button are enough.</div></div>
+    <div class="use-card"><span class="use-tag tag-dont">✗ Don't</span><div class="use-title">Never use on busy backgrounds</div><div class="use-desc">No photos. No patterns. No complex gradients behind any version. Always use a solid colour from the approved palette. If you are not sure, use white.</div></div>
   </div>
 
   <div class="cs-demo r d4">
@@ -494,7 +488,7 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text-main);
       <span class="cs-lbl cs-bot">min 1× H height</span>
       <span class="cs-lbl cs-lft">min 1× H</span>
       <span class="cs-lbl cs-rgt">min 1× H</span>
-      <img src="image/logo-v2-light.png" class="cs-img" alt="Clearspace demo">
+      <img src="images/logo-favicon.png" class="cs-img" alt="Clearspace demo">
     </div>
   </div>
 </section>

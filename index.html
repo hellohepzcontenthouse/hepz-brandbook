@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HEPZ Content House — Brand Book</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,300;1,400;1,500;1,600&family=Caveat:wght@600;700&family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #FFFFFF;
+  --bg-card: #FAFAF8;
+  --accent: #0A66C2;
+  --accent-light: #E8F0FB;
+  --navy: #0D1B2A;
+  --line: rgba(0,0,0,0.09);
+  --text-main: #0D1B2A;
+  --text-muted: #5A6A7A;
+  --shadow-soft: 0 4px 24px rgba(0,0,0,0.07);
+  --shadow-brutal: 5px 5px 0px var(--accent);
+  --ease: cubic-bezier(0.16,1,0.3,1);
+  --pad: clamp(24px,6vw,80px);
+  --bw: 1px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;overflow-x:hidden;}
+body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text-main);-webkit-font-smoothing:antialiased;overflow-x:hidden;}
+
+.grid-bg{position:fixed;inset:0;pointer-events:none;z-index:0;opacity:0.45;}
+
+/* NAV */
+.top-nav{position:fixed;top:0;left:0;width:100%;z-index:900;display:flex;justify-content:center;background:rgba(255,255,255,0.92);border-bottom:var(--bw) solid var(--line);backdrop-filter:blur(20px);transition:box-shadow 0.4s;}
+.top-nav.scrolled{box-shadow:0 4px 20px rgba(0,0,0,0.08);}
+.top-nav-inner{width:100%;max-width:1440px;display:flex;justify-content:space-between;align-items:center;padding:16px var(--pad);}
+.nl{text-decoration:none;display:flex;flex-direction:column;gap:1px;}
+.nl1{font-family:'Playfair Display',serif;font-weight:600;font-size:17px;letter-spacing:0.26em;text-transform:uppercase;color:var(--text-main);line-height:1;}
+.nlr{width:100%;height:2px;background:var(--accent);opacity:0.5;}
+.nl2{font-family:'Playfair Display',serif;font-style:italic;font-size:11px;letter-spacing:0.2em;color:var(--accent);line-height:1;}
+.nav-links{display:flex;gap:0;align-items:center;}
+.nav-link{font-size:10px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--text-main);text-decoration:none;padding:6px 12px;position:relative;transition:color 0.3s;}
+.nav-link::after{content:'';position:absolute;bottom:0;left:12px;right:12px;height:2px;background:var(--accent);transform:scaleX(0);transform-origin:left;transition:transform 0.3s var(--ease);}
+.nav-link:hover{color:var(--accent);}
+.nav-link:hover::after{transform:scaleX(1);}
+@media(max-width:900px){.nav-links{display:none;}}
+
+/* HERO */
+.hero{min-height:100vh;display:flex;flex-direction:column;align-items:flex-start;justify-content:center;padding:120px var(--pad) 80px;position:relative;overflow:hidden;z-index:1;}
+.hero-wm{position:absolute;right:-0.05em;bottom:-0.12em;font-family:'Playfair Display',serif;font-weight:900;font-size:clamp(160px,34vw,460px);line-height:0.8;color:var(--accent);opacity:0.05;pointer-events:none;user-select:none;letter-spacing:0.04em;}
+.h-eye{font-size:11px;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:var(--accent);margin-bottom:20px;}
+.h-h1{font-family:'Playfair Display',serif;font-weight:900;font-size:clamp(72px,16vw,220px);line-height:0.88;color:var(--text-main);letter-spacing:0.12em;text-transform:uppercase;margin-bottom:12px;}
+.h-h2{font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(28px,5vw,64px);color:var(--accent);font-weight:500;margin-bottom:48px;line-height:1.2;}
+.h-meta{font-size:11px;font-weight:600;letter-spacing:0.18em;text-transform:uppercase;color:var(--text-muted);}
+.h-div{width:48px;height:3px;background:var(--accent);margin:24px 0;}
+
+/* SHARED SECTION */
+.sec{position:relative;z-index:1;padding:120px var(--pad);max-width:1440px;margin:0 auto;}
+.sl{display:flex;align-items:center;gap:14px;font-size:10px;font-weight:700;letter-spacing:0.22em;text-transform:uppercase;color:var(--accent);margin-bottom:16px;}
+.sl::before{content:'';display:block;width:32px;height:2px;background:var(--accent);}
+.sh1{font-family:'Bebas Neue',sans-serif;font-size:clamp(52px,10vw,130px);line-height:0.88;color:var(--text-main);margin-bottom:8px;}
+.sh2{font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(22px,3vw,42px);color:var(--accent);font-weight:500;margin-bottom:20px;}
+.sdesc{font-size:15px;color:var(--text-muted);line-height:1.8;max-width:540px;margin-bottom:64px;}
+.strip{width:100%;height:1px;background:var(--line);}
+.strip-a{width:100%;height:2px;background:linear-gradient(to right,var(--accent),transparent);}
+
+/* FADE IN */
+.r{opacity:0;transform:translateY(28px);filter:blur(6px);transition:opacity 0.9s var(--ease),transform 0.9s var(--ease),filter 0.9s var(--ease);}
+.r.in{opacity:1;transform:translateY(0);filter:blur(0);}
+.d1{transition-delay:0s;}.d2{transition-delay:.1s;}.d3{transition-delay:.2s;}.d4{transition-delay:.32s;}.d5{transition-delay:.44s;}.d6{transition-delay:.56s;}
+
+/* ── 01 LOGO ── */
+.logo-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-bottom:2px;}
+.lc{aspect-ratio:1;display:flex;align-items:center;justify-content:center;padding:40px;position:relative;overflow:hidden;transition:transform 0.4s var(--ease),box-shadow 0.4s;}
+.lc:hover{transform:translate(-3px,-3px);box-shadow:var(--shadow-brutal);z-index:2;}
+.lc img{width:72%;max-width:240px;object-fit:contain;}
+.lc-lbl{position:absolute;bottom:18px;left:22px;font-size:10px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;}
+.lc-navy{background:var(--navy);}
+.lc-navy .lc-lbl{color:rgba(255,255,255,0.3);}
+.lc-white{background:#fff;border:var(--bw) solid var(--line);}
+.lc-white .lc-lbl{color:rgba(13,27,42,0.3);}
+.lc-dark{background:#1A2332;}
+.lc-dark .lc-lbl{color:rgba(255,255,255,0.28);}
+.lc-wide{grid-column:1/-1;background:var(--bg-card);border:var(--bw) solid var(--line);padding:56px 64px;display:flex;align-items:center;justify-content:center;position:relative;transition:transform 0.4s var(--ease),box-shadow 0.4s;}
+.lc-wide:hover{transform:translate(-3px,-3px);box-shadow:var(--shadow-brutal);}
+.lc-wide img{max-height:120px;max-width:480px;object-fit:contain;}
+.lc-wide-lbl{position:absolute;bottom:18px;right:24px;font-size:10px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:rgba(13,27,42,0.3);}
+
+.fav-row{display:flex;gap:32px;align-items:flex-end;flex-wrap:wrap;margin-top:56px;}
+.fav-item{display:flex;flex-direction:column;align-items:center;gap:12px;}
+.fav-item span{font-size:10px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--text-muted);}
+.fav-item img{object-fit:contain;border-radius:18%;}
+
+/* ── 02 COLOURS ── */
+.col-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;}
+.csw{aspect-ratio:3/4;display:flex;flex-direction:column;justify-content:flex-end;padding:28px;position:relative;overflow:hidden;transition:transform 0.4s var(--ease),box-shadow 0.4s;}
+.csw:hover{transform:translate(-3px,-3px);box-shadow:var(--shadow-brutal);z-index:2;}
+.csw-name{font-family:'Playfair Display',serif;font-size:22px;font-weight:700;margin-bottom:4px;}
+.csw-hex{font-size:12px;font-weight:700;letter-spacing:0.1em;opacity:0.6;font-family:'Inter',monospace;}
+.csw-role{font-size:10px;letter-spacing:0.12em;text-transform:uppercase;opacity:0.45;margin-top:10px;font-weight:600;}
+.sw-n{background:#0D1B2A;color:#fff;}
+.sw-b{background:#0A66C2;color:#fff;}
+.sw-i{background:#D6E8F7;color:#0D1B2A;}
+.sw-w{background:#fff;color:#0D1B2A;border:var(--bw) solid var(--line);}
+
+.btn-row{display:flex;gap:14px;flex-wrap:wrap;margin-top:48px;}
+.bd{font-size:12px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;padding:13px 26px;border-radius:100px;cursor:default;white-space:nowrap;transition:transform 0.3s var(--ease),box-shadow 0.3s;}
+.bd:hover{transform:translate(-2px,-2px);box-shadow:var(--shadow-brutal);}
+.bd-n{background:var(--navy);color:#fff;border:var(--bw) solid var(--navy);}
+.bd-b{background:var(--accent);color:#fff;border:var(--bw) solid var(--accent);}
+.bd-o{background:transparent;color:var(--navy);border:1.5px solid var(--navy);}
+.bd-s{background:var(--accent-light);color:var(--accent);border:var(--bw) solid transparent;}
+
+/* ── 03 TYPOGRAPHY ── */
+.type-wrap{display:flex;flex-direction:column;}
+.type-row{display:grid;grid-template-columns:180px 1fr;gap:48px;align-items:start;padding:52px 0;border-bottom:var(--bw) solid var(--line);}
+.tm-name{font-size:10px;font-weight:800;letter-spacing:0.18em;text-transform:uppercase;color:var(--accent);margin-bottom:8px;}
+.tm-detail{font-size:12px;color:var(--text-muted);line-height:1.7;}
+.t-disp{font-family:'Bebas Neue',sans-serif;font-size:clamp(52px,8vw,100px);line-height:0.88;letter-spacing:0.02em;color:var(--text-main);}
+.t-head{font-family:'Playfair Display',serif;font-size:clamp(32px,5vw,60px);font-weight:700;line-height:1.05;letter-spacing:-0.01em;color:var(--text-main);}
+.t-scrp{font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(28px,4vw,52px);font-weight:500;color:var(--accent);line-height:1.2;}
+.t-hand{font-family:'Caveat',cursive;font-size:clamp(28px,4vw,48px);font-weight:700;color:var(--accent);line-height:1.2;}
+.t-body{font-size:16px;line-height:1.8;color:var(--text-main);max-width:560px;}
+.t-ui{font-size:11px;font-weight:700;letter-spacing:0.2em;text-transform:uppercase;color:var(--text-muted);}
+@media(max-width:700px){.type-row{grid-template-columns:1fr;gap:14px;}}
+
+/* ── 04 BRAND VOICE ── */
+.voice-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:2px;}
+.vc{background:var(--bg-card);border:var(--bw) solid var(--line);padding:44px 40px;transition:transform 0.4s var(--ease),border-color 0.4s,box-shadow 0.4s;}
+.vc:hover{transform:translate(-3px,-3px);border-color:var(--accent);box-shadow:var(--shadow-brutal);}
+.vc-num{font-size:10px;font-weight:800;letter-spacing:0.2em;text-transform:uppercase;color:var(--accent);margin-bottom:18px;display:block;}
+.vc-name{font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(20px,2.2vw,28px);font-weight:600;color:var(--text-main);margin-bottom:14px;}
+.vc-desc{font-size:14px;color:var(--text-muted);line-height:1.8;margin-bottom:22px;}
+.vc-ex-lbl{font-size:10px;font-weight:800;letter-spacing:0.16em;text-transform:uppercase;color:var(--text-muted);margin-bottom:8px;display:block;}
+.vc-ex{font-family:'Playfair Display',serif;font-style:italic;font-size:15px;color:var(--accent);line-height:1.6;border-left:2px solid var(--accent);padding-left:16px;}
+@media(max-width:700px){.voice-grid{grid-template-columns:1fr;}}
+
+/* ── 05 SOCIAL ── */
+.soc-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+.soc-card{border:var(--bw) solid var(--line);border-radius:16px;overflow:hidden;background:var(--bg-card);transition:transform 0.4s var(--ease),box-shadow 0.4s,border-color 0.4s;}
+.soc-card:hover{transform:translate(-4px,-4px);box-shadow:var(--shadow-brutal);border-color:var(--accent);}
+.sc-lbl{padding:14px 20px;font-size:10px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--text-muted);border-top:var(--bw) solid var(--line);background:var(--bg-card);}
+
+/* Instagram */
+.sc-ig{aspect-ratio:1;}
+.sc-ig .sc-in{width:100%;height:100%;padding:28px;background:var(--navy);display:flex;flex-direction:column;justify-content:flex-end;position:relative;overflow:hidden;}
+.sc-ig .sc-in::before{content:'HEPZ';position:absolute;right:-0.04em;bottom:-0.1em;font-family:'Bebas Neue',sans-serif;font-size:110px;line-height:0.8;color:var(--accent);opacity:0.07;pointer-events:none;}
+.sc-ig .ig-tag{font-size:9px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:var(--accent);margin-bottom:10px;}
+.sc-ig .ig-hl{font-family:'Playfair Display',serif;font-style:italic;font-size:20px;font-weight:600;color:#fff;line-height:1.3;margin-bottom:14px;}
+.sc-ig .ig-bar{width:28px;height:2px;background:var(--accent);margin-bottom:10px;}
+.sc-ig .ig-logo{font-family:'Playfair Display',serif;font-weight:600;font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:rgba(255,255,255,0.35);}
+
+/* LinkedIn */
+.sc-li{aspect-ratio:4/1;}
+.sc-li .sc-in{width:100%;height:100%;padding:20px 28px;background:linear-gradient(105deg,var(--navy) 0%,#0f2340 100%);display:flex;align-items:center;justify-content:space-between;position:relative;overflow:hidden;}
+.sc-li .sc-in::after{content:'';position:absolute;right:0;top:0;bottom:0;width:28%;background:linear-gradient(to right,transparent,rgba(10,102,194,0.14));}
+.sc-li .li-l{display:flex;flex-direction:column;gap:3px;}
+.sc-li .li-name{font-family:'Playfair Display',serif;font-weight:600;font-size:17px;letter-spacing:0.22em;text-transform:uppercase;color:#fff;line-height:1;}
+.sc-li .li-rule{width:100%;height:1.5px;background:var(--accent);opacity:0.5;}
+.sc-li .li-sub{font-family:'Playfair Display',serif;font-style:italic;font-size:11px;letter-spacing:0.12em;color:var(--accent);}
+.sc-li .li-r{font-family:'Bebas Neue',sans-serif;font-size:10px;letter-spacing:0.14em;color:rgba(255,255,255,0.32);text-align:right;}
+
+/* YouTube */
+.sc-yt{aspect-ratio:16/9;}
+.sc-yt .sc-in{width:100%;height:100%;padding:22px;background:var(--navy);display:flex;flex-direction:column;justify-content:flex-end;position:relative;overflow:hidden;}
+.sc-yt .yt-bar{position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(to right,#FF0000,#C4302B);}
+.sc-yt .yt-num{font-family:'Bebas Neue',sans-serif;font-size:52px;line-height:0.88;color:rgba(255,255,255,0.05);position:absolute;top:10px;right:14px;}
+.sc-yt .yt-tag{font-size:9px;font-weight:700;letter-spacing:0.18em;text-transform:uppercase;color:#FF4444;margin-bottom:8px;}
+.sc-yt .yt-hl{font-family:'Bebas Neue',sans-serif;font-size:20px;letter-spacing:0.04em;color:#fff;line-height:1.1;margin-bottom:8px;}
+.sc-yt .yt-logo{font-family:'Playfair Display',serif;font-weight:600;font-size:10px;letter-spacing:0.16em;text-transform:uppercase;color:rgba(255,255,255,0.32);}
+@media(max-width:900px){.soc-grid{grid-template-columns:1fr;}}
+
+/* ── 06 STATIONERY ── */
+.stat-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;}
+.stat-card{background:var(--bg-card);border:var(--bw) solid var(--line);border-radius:12px;padding:32px;overflow:hidden;transition:transform 0.4s var(--ease),box-shadow 0.4s,border-color 0.4s;}
+.stat-card:hover{transform:translate(-3px,-3px);box-shadow:var(--shadow-brutal);border-color:var(--accent);}
+.sc-card-lbl{font-size:10px;font-weight:800;letter-spacing:0.18em;text-transform:uppercase;color:var(--accent);margin-bottom:22px;display:block;}
+.esig{background:#fff;border:var(--bw) solid rgba(0,0,0,0.06);border-radius:8px;padding:22px;}
+.es-name{font-family:'Playfair Display',serif;font-weight:700;font-size:17px;color:var(--navy);margin-bottom:2px;}
+.es-role{font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent);margin-bottom:12px;}
+.es-rule{width:36px;height:2px;background:var(--accent);margin-bottom:12px;}
+.es-det{font-size:12px;color:var(--text-muted);line-height:1.9;display:flex;flex-direction:column;gap:2px;}
+.es-det a{color:var(--accent);text-decoration:none;font-weight:600;}
+.es-brand{font-family:'Playfair Display',serif;font-weight:600;font-size:12px;letter-spacing:0.22em;text-transform:uppercase;color:var(--navy);margin-top:14px;padding-top:14px;border-top:var(--bw) solid rgba(0,0,0,0.06);}
+.es-tag{font-family:'Playfair Display',serif;font-style:italic;font-size:11px;letter-spacing:0.12em;color:var(--accent);}
+.lh-body{background:#fff;border:var(--bw) solid rgba(0,0,0,0.06);border-radius:8px;padding:24px;aspect-ratio:8.5/11;display:flex;flex-direction:column;position:relative;overflow:hidden;}
+.lh-accent{position:absolute;top:0;left:0;right:0;height:4px;background:linear-gradient(to right,var(--navy),var(--accent));}
+.lh-head{display:flex;justify-content:space-between;align-items:flex-start;padding-bottom:18px;border-bottom:2px solid var(--navy);margin-bottom:18px;}
+.lh-ln{font-family:'Playfair Display',serif;font-weight:600;font-size:14px;letter-spacing:0.22em;text-transform:uppercase;color:var(--navy);line-height:1;}
+.lh-r{width:100%;height:1.5px;background:var(--accent);opacity:0.5;margin:3px 0;}
+.lh-lt{font-family:'Playfair Display',serif;font-style:italic;font-size:10px;letter-spacing:0.14em;color:var(--accent);}
+.lh-ct{font-size:10px;color:var(--text-muted);text-align:right;line-height:1.8;}
+.lh-lines{flex:1;display:flex;flex-direction:column;gap:9px;}
+.lh-line{height:1px;background:rgba(0,0,0,0.06);}
+.lh-foot{padding-top:14px;border-top:var(--bw) solid rgba(0,0,0,0.07);display:flex;justify-content:space-between;align-items:center;}
+.lh-fb{font-family:'Playfair Display',serif;font-weight:600;font-size:10px;letter-spacing:0.18em;text-transform:uppercase;color:var(--navy);}
+.lh-fp{font-size:10px;color:var(--text-muted);}
+.pre-block{background:var(--bg-card);border:var(--bw) solid var(--line);border-radius:8px;padding:26px;overflow-x:auto;margin-top:20px;}
+.pre-block pre{font-size:12px;color:var(--text-muted);line-height:1.9;white-space:pre-wrap;font-family:'Inter',monospace;}
+@media(max-width:700px){.stat-grid{grid-template-columns:1fr;}}
+
+/* ── 07 USAGE ── */
+.use-grid{display:grid;grid-template-columns:1fr 1fr;gap:2px;}
+.use-card{background:var(--bg-card);border:var(--bw) solid var(--line);padding:42px 38px;}
+.use-tag{display:inline-flex;align-items:center;gap:6px;font-size:10px;font-weight:800;letter-spacing:0.14em;text-transform:uppercase;padding:5px 12px;border-radius:100px;margin-bottom:18px;}
+.tag-do{background:#E8F5E9;color:#2E7D32;}
+.tag-dont{background:#FFEBEE;color:#C62828;}
+.use-title{font-family:'Playfair Display',serif;font-size:19px;font-weight:700;color:var(--text-main);margin-bottom:12px;line-height:1.3;}
+.use-desc{font-size:14px;color:var(--text-muted);line-height:1.8;}
+.cs-demo{margin-top:64px;display:flex;align-items:center;justify-content:center;padding:80px;background:var(--bg-card);border:var(--bw) solid var(--line);position:relative;}
+.cs-box{border:1.5px dashed var(--accent);padding:48px;position:relative;}
+.cs-lbl{position:absolute;font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--accent);white-space:nowrap;}
+.cs-top{top:-22px;left:50%;transform:translateX(-50%);}
+.cs-bot{bottom:-22px;left:50%;transform:translateX(-50%);}
+.cs-lft{left:-66px;top:50%;writing-mode:vertical-rl;transform:translateY(-50%) rotate(180deg);}
+.cs-rgt{right:-66px;top:50%;writing-mode:vertical-rl;transform:translateY(-50%);}
+.cs-img{width:120px;display:block;}
+@media(max-width:700px){.use-grid{grid-template-columns:1fr;}.cs-demo{padding:48px 32px;}.cs-lft,.cs-rgt{display:none;}}
+
+/* FOOTER */
+.ft{background:var(--navy);color:#fff;padding:80px var(--pad);text-align:center;position:relative;overflow:hidden;z-index:1;}
+.ft::before{content:'HEPZ';position:absolute;right:-0.04em;bottom:-0.12em;font-family:'Playfair Display',serif;font-weight:900;font-size:clamp(150px,28vw,360px);line-height:0.8;color:rgba(255,255,255,0.04);pointer-events:none;letter-spacing:0.04em;}
+.ft-name{font-family:'Playfair Display',serif;font-weight:900;font-size:clamp(48px,8vw,100px);letter-spacing:0.18em;text-transform:uppercase;line-height:1;margin-bottom:8px;}
+.ft-tag{font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(20px,3vw,32px);color:var(--accent);font-weight:400;margin-bottom:40px;}
+.ft-meta{font-size:11px;font-weight:600;letter-spacing:0.16em;text-transform:uppercase;color:rgba(255,255,255,0.3);}
+.tkr-wrap{overflow:hidden;border-top:var(--bw) solid rgba(255,255,255,0.08);border-bottom:var(--bw) solid rgba(255,255,255,0.08);padding:14px 0;margin:40px 0;}
+.tkr-row{display:flex;width:max-content;animation:roll 18s linear infinite;align-items:center;gap:12px;}
+.tkr-item{font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:rgba(255,255,255,0.45);white-space:nowrap;padding:6px 16px;border-radius:100px;border:var(--bw) solid rgba(255,255,255,0.1);}
+.tkr-item::before{content:'·';margin-right:8px;color:var(--accent);}
+@keyframes roll{from{transform:translateX(0);}to{transform:translateX(-50%);}}
+</style>
+</head>
+<body>
+
+<div class="grid-bg" id="grid-bg"></div>
+
+<nav class="top-nav" id="top-nav">
+  <div class="top-nav-inner">
+    <a href="#hero" class="nl">
+      <span class="nl1">HEPZ</span>
+      <span class="nlr"></span>
+      <span class="nl2">content house</span>
+    </a>
+    <div class="nav-links">
+      <a href="#logo" class="nav-link">Logo</a>
+      <a href="#colours" class="nav-link">Colours</a>
+      <a href="#typography" class="nav-link">Typography</a>
+      <a href="#voice" class="nav-link">Voice</a>
+      <a href="#social" class="nav-link">Social</a>
+      <a href="#usage" class="nav-link">Usage</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<div class="hero" id="hero">
+  <div class="hero-wm" aria-hidden="true">HEPZ</div>
+  <p class="h-eye r d1">Brand Identity System</p>
+  <h1 class="h-h1 r d2">HEPZ</h1>
+  <p class="h-h2 r d3">content house</p>
+  <div class="h-div r d4"></div>
+  <p class="h-meta r d5">Brand Book</p>
+</div>
+
+<div class="strip"></div>
+
+<!-- 01 LOGO -->
+<section class="sec" id="logo">
+  <p class="sl r d1">01 — Logo System</p>
+  <h2 class="sh1 r d2">THE MARK</h2>
+  <p class="sh2 r d3">Five versions. One system.</p>
+  <p class="sdesc r d4">A hand-crafted house with HCH letterforms and a play button at its heart. Organic brush-stroke texture gives warmth. The rounded square container makes it work everywhere — 16px favicon to billboard.</p>
+
+  <div class="logo-grid r d3">
+    <div class="lc lc-navy">
+      <img src="image/logo-v1-dark.png" alt="V1 Dark">
+      <span class="lc-lbl">V1 — Primary Dark</span>
+    </div>
+    <div class="lc lc-white">
+      <img src="image/logo-v2-light.png" alt="V2 Light">
+      <span class="lc-lbl">V2 — Light + Accent</span>
+    </div>
+    <div class="lc lc-dark">
+      <img src="image/logo-v3-reversed.png" alt="V3 Reversed">
+      <span class="lc-lbl">V3 — Reversed</span>
+    </div>
+  </div>
+  <div class="lc-wide r d4">
+    <img src="image/logo-horizontal.png" alt="Horizontal Lockup">
+    <span class="lc-wide-lbl">Horizontal Lockup — Header / Email / Documents</span>
+  </div>
+
+  <div class="fav-row r d5">
+    <div class="fav-item"><img src="image/logo-favicon.png" style="width:128px;" alt="128px"><span>128px</span></div>
+    <div class="fav-item"><img src="image/logo-favicon.png" style="width:64px;" alt="64px"><span>64px</span></div>
+    <div class="fav-item"><img src="image/logo-favicon.png" style="width:32px;" alt="32px"><span>32px</span></div>
+    <div class="fav-item"><img src="image/logo-favicon.png" style="width:16px;" alt="16px"><span>16px</span></div>
+    <div class="fav-item" style="margin-left:28px;align-items:flex-start;max-width:300px;">
+      <p style="font-size:13px;color:var(--text-muted);line-height:1.75;font-style:italic;">At 32px and below, text drops. Only the house and blue play button carry the brand. This is intentional — and it works.</p>
+    </div>
+  </div>
+</section>
+
+<div class="strip-a"></div>
+
+<!-- 02 COLOURS -->
+<section class="sec" id="colours">
+  <p class="sl r d1">02 — Colour Palette</p>
+  <h2 class="sh1 r d2">THE COLOURS</h2>
+  <p class="sh2 r d3">Two colours. All the power.</p>
+  <p class="sdesc r d4">Navy carries authority and depth. Blue is energy, action, and content. Ice is breathing room. White is the canvas. Never introduce new colours without reason.</p>
+
+  <div class="col-grid r d3">
+    <div class="csw sw-n"><div class="csw-name">Navy</div><div class="csw-hex">#0D1B2A</div><div class="csw-role">Primary · Dominant</div></div>
+    <div class="csw sw-b"><div class="csw-name">Blue</div><div class="csw-hex">#0A66C2</div><div class="csw-role">Accent · Energy</div></div>
+    <div class="csw sw-i"><div class="csw-name">Ice</div><div class="csw-hex">#D6E8F7</div><div class="csw-role">Background · Ghost</div></div>
+    <div class="csw sw-w"><div class="csw-name">White</div><div class="csw-hex">#FFFFFF</div><div class="csw-role">Base · Canvas</div></div>
+  </div>
+  <div class="btn-row r d4">
+    <div class="bd bd-n">Book a Call</div>
+    <div class="bd bd-b">Book a Call</div>
+    <div class="bd bd-o">Learn More</div>
+    <div class="bd bd-s">Our Work</div>
+  </div>
+  <p style="font-size:11px;color:var(--text-muted);margin-top:12px;letter-spacing:0.06em;">Navy CTA · Blue CTA · Outline · Soft</p>
+</section>
+
+<div class="strip"></div>
+
+<!-- 03 TYPOGRAPHY -->
+<section class="sec" id="typography">
+  <p class="sl r d1">03 — Typography</p>
+  <h2 class="sh1 r d2">THE VOICE</h2>
+  <p class="sh2 r d3">Four typefaces. Four roles. Never swap.</p>
+  <p class="sdesc r d4">Each font has one job. Bebas Neue for impact and display. Playfair for elegance and editorial authority. Caveat for signature warmth. Inter for everything functional.</p>
+
+  <div class="type-wrap r d3">
+    <div class="type-row">
+      <div><div class="tm-name">Display</div><div class="tm-detail">Bebas Neue<br>Regular<br>Hero headings, section titles</div></div>
+      <div class="t-disp">SOCIAL MEDIA BRANDS</div>
+    </div>
+    <div class="type-row">
+      <div><div class="tm-name">Editorial</div><div class="tm-detail">Playfair Display<br>Bold / Italic<br>Sub-headings, logo wordmark</div></div>
+      <div class="t-head">Content that builds communities.</div>
+    </div>
+    <div class="type-row">
+      <div><div class="tm-name">Accent Script</div><div class="tm-detail">Playfair Display Italic<br>Medium 500<br>Tag phrases, brand blue only</div></div>
+      <div class="t-scrp">that build value</div>
+    </div>
+    <div class="type-row">
+      <div><div class="tm-name">Handwritten</div><div class="tm-detail">Caveat<br>Bold 700<br>Signatures, personal moments</div></div>
+      <div class="t-hand">Hephzibah Edwin</div>
+    </div>
+    <div class="type-row">
+      <div><div class="tm-name">Body</div><div class="tm-detail">Inter<br>Regular 400<br>All body copy, 16px / 1.8</div></div>
+      <div class="t-body">We take complete creative and operational ownership — from strategy to execution — for creators, founders, and brands that want to be everywhere.</div>
+    </div>
+    <div class="type-row">
+      <div><div class="tm-name">UI / Labels</div><div class="tm-detail">Inter Bold 700<br>11px ALL CAPS<br>Nav, labels, tags</div></div>
+      <div class="t-ui">About Us &nbsp;·&nbsp; Offerings &nbsp;·&nbsp; Impact &nbsp;·&nbsp; Testimonials &nbsp;·&nbsp; FAQ</div>
+    </div>
+  </div>
+</section>
+
+<div class="strip-a"></div>
+
+<!-- 04 BRAND VOICE -->
+<section class="sec" id="voice">
+  <p class="sl r d1">04 — Brand Voice</p>
+  <h2 class="sh1 r d2">THE TONE</h2>
+  <p class="sh2 r d3">What HEPZ sounds like.</p>
+  <p class="sdesc r d4">HEPZ speaks with confidence, not arrogance. Warmth, not fluff. Directness without aggression. Every word earns its place. Every number is real.</p>
+
+  <div class="voice-grid r d3">
+    <div class="vc">
+      <span class="vc-num">01 / Direct</span>
+      <div class="vc-name">Say what you mean. Then stop.</div>
+      <p class="vc-desc">No padding, no corporate language. Every sentence does one job. Short paragraphs. No filler. The words matter more than the word count.</p>
+      <span class="vc-ex-lbl">In practice</span>
+      <div class="vc-ex">"You focus on the business. We make sure the world sees it."</div>
+    </div>
+    <div class="vc">
+      <span class="vc-num">02 / Warm</span>
+      <div class="vc-name">Confidence with a human pulse.</div>
+      <p class="vc-desc">HEPZ was built by a person, not a boardroom. The warmth of that origin stays in every piece of writing. Authority never comes at the cost of humanity.</p>
+      <span class="vc-ex-lbl">In practice</span>
+      <div class="vc-ex">"Not sure? Just book a call. We'll tell you honestly which one fits — even if it's the smallest one."</div>
+    </div>
+    <div class="vc">
+      <span class="vc-num">03 / Strategic</span>
+      <div class="vc-name">Every claim is earned. Every number real.</div>
+      <p class="vc-desc">We never say "amazing results" when we can say "862K interactions." We never say "we're different" without showing the difference. Strategy lives in specifics.</p>
+      <span class="vc-ex-lbl">In practice</span>
+      <div class="vc-ex">"From zero to 200K+ followers — because we stayed consistent long enough for the platform to push the content without being asked."</div>
+    </div>
+    <div class="vc">
+      <span class="vc-num">04 / Faith-rooted</span>
+      <div class="vc-name">Built for delight. Grounded in purpose.</div>
+      <p class="vc-desc">HEPZ is named after a word meaning "my delight is in her." That meaning lives quietly but permanently in everything — excellence, joy, light. Not preached. Practised.</p>
+      <span class="vc-ex-lbl">In practice</span>
+      <div class="vc-ex">"You are the light of the world — a city on a hill cannot be hidden."</div>
+    </div>
+  </div>
+
+  <div style="margin-top:56px;" class="r d4">
+    <p class="sl">What HEPZ never says</p>
+    <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:16px;">
+      <span style="padding:9px 18px;border-radius:100px;background:#FFEBEE;color:#C62828;font-size:11px;font-weight:700;text-decoration:line-through;">"We are passionate about..."</span>
+      <span style="padding:9px 18px;border-radius:100px;background:#FFEBEE;color:#C62828;font-size:11px;font-weight:700;text-decoration:line-through;">"Best-in-class solutions"</span>
+      <span style="padding:9px 18px;border-radius:100px;background:#FFEBEE;color:#C62828;font-size:11px;font-weight:700;text-decoration:line-through;">"Synergy"</span>
+      <span style="padding:9px 18px;border-radius:100px;background:#FFEBEE;color:#C62828;font-size:11px;font-weight:700;text-decoration:line-through;">"Going viral"</span>
+      <span style="padding:9px 18px;border-radius:100px;background:#FFEBEE;color:#C62828;font-size:11px;font-weight:700;text-decoration:line-through;">"Guaranteed results"</span>
+    </div>
+  </div>
+</section>
+
+<div class="strip"></div>
+
+<!-- 05 SOCIAL -->
+<section class="sec" id="social">
+  <p class="sl r d1">05 — Social Media Templates</p>
+  <h2 class="sh1 r d2">THE CANVAS</h2>
+  <p class="sh2 r d3">Every platform. One system.</p>
+  <p class="sdesc r d4">Navy background. Bebas Neue for punch. Playfair italic for softness. Blue play button as the through-line. These are starting points — apply them to your actual content.</p>
+
+  <div class="soc-grid r d3">
+    <div class="soc-card sc-ig">
+      <div class="sc-in">
+        <div class="ig-tag">Instagram · Reel Cover</div>
+        <div class="ig-bar"></div>
+        <div class="ig-hl">How we took a brand from 0 to 200K in 8 months</div>
+        <div class="ig-logo">HEPZ content house</div>
+      </div>
+      <div class="sc-lbl">Instagram — 1:1 Square</div>
+    </div>
+    <div class="soc-card sc-li">
+      <div class="sc-in">
+        <div class="li-l"><div class="li-name">HEPZ</div><div class="li-rule"></div><div class="li-sub">content house</div></div>
+        <div class="li-r">Social Media Brands<br>That Build Visibility</div>
+      </div>
+      <div class="sc-lbl">LinkedIn — Profile Banner 4:1</div>
+    </div>
+    <div class="soc-card sc-yt">
+      <div class="sc-in">
+        <div class="yt-bar"></div>
+        <div class="yt-num">01</div>
+        <div class="yt-tag">YouTube · Thumbnail</div>
+        <div class="yt-hl">THE CONTENT STRATEGY<br>THAT CHANGED EVERYTHING</div>
+        <div class="yt-logo">HEPZ CONTENT HOUSE</div>
+      </div>
+      <div class="sc-lbl">YouTube — 16:9 Thumbnail</div>
+    </div>
+  </div>
+
+  <div style="margin-top:48px;" class="r d4">
+    <p class="sl">Platform colour rules</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:2px;margin-top:20px;">
+      <div style="padding:26px 30px;background:var(--bg-card);border:var(--bw) solid var(--line);">
+        <div style="font-size:10px;font-weight:800;letter-spacing:0.18em;text-transform:uppercase;color:var(--accent);margin-bottom:10px;">Instagram</div>
+        <div style="font-size:14px;color:var(--text-muted);line-height:1.75;">Navy base, white type, blue accent only. Never full-colour backgrounds.</div>
+      </div>
+      <div style="padding:26px 30px;background:var(--bg-card);border:var(--bw) solid var(--line);">
+        <div style="font-size:10px;font-weight:800;letter-spacing:0.18em;text-transform:uppercase;color:var(--accent);margin-bottom:10px;">LinkedIn</div>
+        <div style="font-size:14px;color:var(--text-muted);line-height:1.75;">Navy or white base. Blue accent on key words. Clean and authoritative only.</div>
+      </div>
+      <div style="padding:26px 30px;background:var(--bg-card);border:var(--bw) solid var(--line);">
+        <div style="font-size:10px;font-weight:800;letter-spacing:0.18em;text-transform:uppercase;color:var(--accent);margin-bottom:10px;">YouTube</div>
+        <div style="font-size:14px;color:var(--text-muted);line-height:1.75;">High contrast. Dark base, bold Bebas headline. Red bar on YouTube thumbnails only — never elsewhere.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="strip"></div>
+
+<!-- 06 USAGE -->
+<section class="sec" id="usage">
+  <p class="sl r d1">06 — Usage Rules</p>
+  <h2 class="sh1 r d2">DO & DON'T</h2>
+  <p class="sh2 r d3">The logo is a system. Treat it like one.</p>
+  <p class="sdesc r d4">Six rules. If something isn't covered here, ask: does this serve the brand or just the moment? If it's only the moment — don't do it.</p>
+
+  <div class="use-grid r d3">
+    <div class="use-card"><span class="use-tag tag-do">✓ Do</span><div class="use-title">Use on approved backgrounds only</div><div class="use-desc">V1 navy fill on white or light backgrounds. V3 reversed on dark or navy. V2 light for all branded documents. Never layer any version on a photograph.</div></div>
+    <div class="use-card"><span class="use-tag tag-dont">✗ Don't</span><div class="use-title">Never stretch, skew, or distort</div><div class="use-desc">Never scale non-proportionally. Never rotate. Never apply drop shadows, glows, or 3D effects to any element of the mark or wordmark.</div></div>
+    <div class="use-card"><span class="use-tag tag-do">✓ Do</span><div class="use-title">Maintain the clearspace zone</div><div class="use-desc">Minimum clearspace equal to the height of the "H" in HEPZ on all four sides. No text, images, or graphic elements may enter this zone.</div></div>
+    <div class="use-card"><span class="use-tag tag-dont">✗ Don't</span><div class="use-title">Never recolour the mark</div><div class="use-desc">Only use the three approved versions. No gradients on the logo. No single-colour versions in unapproved colours. No outlines added around the mark.</div></div>
+    <div class="use-card"><span class="use-tag tag-do">✓ Do</span><div class="use-title">Use the favicon at small sizes</div><div class="use-desc">Below 48px always use the icon-only favicon mark. Text becomes unreadable and must never be forced into favicon, app icon, or profile picture contexts.</div></div>
+    <div class="use-card"><span class="use-tag tag-dont">✗ Don't</span><div class="use-title">Never use on busy backgrounds</div><div class="use-desc">No photographic backgrounds, busy patterns, or complex gradients behind any logo version. Always use a solid approved colour. When in doubt, use white.</div></div>
+  </div>
+
+  <div class="cs-demo r d4">
+    <div class="cs-box">
+      <span class="cs-lbl cs-top">min 1× H height</span>
+      <span class="cs-lbl cs-bot">min 1× H height</span>
+      <span class="cs-lbl cs-lft">min 1× H</span>
+      <span class="cs-lbl cs-rgt">min 1× H</span>
+      <img src="image/logo-v2-light.png" class="cs-img" alt="Clearspace demo">
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="ft">
+  <div class="tkr-wrap">
+    <div class="tkr-row" id="tkr">
+      <span class="tkr-item">Logo System</span>
+      <span class="tkr-item">Colour Palette</span>
+      <span class="tkr-item">Typography</span>
+      <span class="tkr-item">Brand Voice</span>
+      <span class="tkr-item">Social Templates</span>
+      <span class="tkr-item">Usage Rules</span>
+    </div>
+  </div>
+  <div class="ft-name">HEPZ</div>
+  <div class="ft-tag">content house</div>
+  <div class="ft-meta">Brand Book &nbsp;·&nbsp; HEPZ Content House</div>
+</footer>
+
+<script>
+// Nav scroll
+window.addEventListener('scroll',()=>{
+  document.getElementById('top-nav').classList.toggle('scrolled',window.scrollY>60);
+},{passive:true});
+
+// Scroll reveal
+const io=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});
+},{threshold:0.1,rootMargin:'0px 0px -40px 0px'});
+document.querySelectorAll('.r').forEach(el=>io.observe(el));
+setTimeout(()=>document.querySelectorAll('.hero .r').forEach(el=>el.classList.add('in')),80);
+
+// Ticker duplicate
+const t=document.getElementById('tkr');
+if(t)Array.from(t.children).forEach(c=>t.appendChild(c.cloneNode(true)));
+
+// Vesica Piscis grid
+(function(){
+  const R=28,stepX=R,stepY=R*1.732;
+  const stroke='rgba(0,0,0,0.05)';
+  const pw=stepX*2,ph=stepY;
+  const svg=`<svg xmlns="http://www.w3.org/2000/svg" width="100%" height="100%"><defs><pattern id="vp" x="0" y="0" width="${pw}" height="${ph}" patternUnits="userSpaceOnUse"><circle cx="0" cy="0" r="${R}" fill="none" stroke="${stroke}" stroke-width="0.5"/><circle cx="${pw}" cy="0" r="${R}" fill="none" stroke="${stroke}" stroke-width="0.5"/><circle cx="0" cy="${ph}" r="${R}" fill="none" stroke="${stroke}" stroke-width="0.5"/><circle cx="${pw}" cy="${ph}" r="${R}" fill="none" stroke="${stroke}" stroke-width="0.5"/><circle cx="${stepX}" cy="${ph/2}" r="${R}" fill="none" stroke="${stroke}" stroke-width="0.5"/></pattern></defs><rect width="100%" height="100%" fill="url(#vp)"/></svg>`;
+  const bg=document.getElementById('grid-bg');
+  if(bg){bg.style.backgroundImage='url("data:image/svg+xml;charset=utf-8,'+encodeURIComponent(svg)+'")';bg.style.backgroundRepeat='repeat';}
+})();
+</script>
+</body>
+</html>
